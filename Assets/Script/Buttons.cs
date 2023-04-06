@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Move", menuName = "NewAssets/Create new Move")]
-public class Move : ScriptableObject
+public class Buttons : MonoBehaviour
 {
-    public List<int> X = new List<int>();
-    public List<int> Y = new List<int>();
-    public string moveName;
+    public CreateZone createZone;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +14,17 @@ public class Move : ScriptableObject
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
+
+    public void ExitFight()
+    {
+        createZone.DestroyZone();
+    }
+
+    public void NextAction()
+    {
+        createZone.newAction();
+    }
+
 }
