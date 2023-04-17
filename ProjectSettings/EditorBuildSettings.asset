@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/PregameMenu.unity
     guid: 8098ca7344cc24f4eb7c4fb7834e469c
   - enabled: 1
-    path: Assets/Scenes/Personnal Scenes/Test_MobDifficulty.unity
+    path: Assets/Scenes/Menus/Game.unity
     guid: 6c06fc9350472f744883bc063c77d99d
   m_configObjects: {}

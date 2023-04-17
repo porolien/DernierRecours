@@ -15,27 +15,35 @@ public class GameManager : MonoBehaviour
         }
     }
 
-            
-
-    public int DifficultyIndex = 0;  
+    public int DifficultyIndex = 0;
+    public GameObject primaryCanva;
 
     void Awake()
     {
         _instance = this;
         DontDestroyOnLoad(this);
     }
-    public void EasyDifficulty()
-    {
-        DifficultyIndex = 0;
-    }
 
-    public void MediumDifficulty()
+    // Set Difficulty of the game
+    public void EasyDifficulty()
     {
         DifficultyIndex = 1;
     }
 
-    public void HardDifficulty()
+    public void MediumDifficulty()
     {
         DifficultyIndex = 2;
     }
+
+    public void HardDifficulty()
+    {
+        DifficultyIndex = 3;
+    }
+
+    // Launch a new turn after all the events
+    public void Newturn()
+    {
+        primaryCanva.gameObject.SetActive(true);
+    }
+    
 }
