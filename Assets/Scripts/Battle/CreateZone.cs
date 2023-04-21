@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class CreateZone : MonoBehaviour
     public MonstresBase monster;
     //public List<List<int>> AllAttackPosition = new List<List<int>>();
     List<Bloc> blocs = new List<Bloc>();
+    public Button NextAction, EndOfFight;
     public Canvas canvas;
     public Image oneBloc;
     int NbrBlocLength;
@@ -55,58 +57,16 @@ public class CreateZone : MonoBehaviour
             {
                 float SixeX = canvas.GetComponent<RectTransform>().rect.width / NbrBlocWidth;
                 float SixeY = canvas.GetComponent<RectTransform>().rect.height / NbrBlocLength;
-                Debug.Log(canvas.GetComponent<RectTransform>().rect.width/NbrBlocWidth);
-                Debug.Log(canvas.GetComponent<RectTransform>().rect.height/NbrBlocLength);
                 Image bloc = Instantiate(oneBloc, new Vector3(SixeX * j + SixeX / 2, SixeY * i + SixeY / 2, 0), Quaternion.identity);
                 bloc.rectTransform.sizeDelta = new Vector2(SixeX, SixeY );
-                //Debug.Log(i);
-                //Debug.Log(SixeY);
-                //Debug.Log(SixeX * i + SixeX / 2);
-                /*bloc.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, SixeX);
-                 bloc.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, SixeY);*/
                 bloc.transform.SetParent(canvas.transform, true);
-
-                /* switch (i) {
-                     case 0:
-                         bloc.color = Color.blue;
-                         break;
-                 }
-                 switch (i)
-                 {
-                     case 1:
-                         bloc.color = Color.yellow;
-                         break;
-                 }
-                 switch (i)
-                 {
-                     case 2:
-                         bloc.color = Color.green;
-                         break;
-                 }
-                 switch (i)
-                 {
-                     case 3:
-                         bloc.color = Color.black;
-                         break;
-                 }
-                 switch (i)
-                 {
-                     case 4:
-                         bloc.color = Color.gray;
-                         break;
-                 }
-                 if (j % 2 == 0)
-                 {
-                     bloc.color = Color.red;
-                 }*/
+                bloc.transform.SetSiblingIndex(0);
 
                 Bloc newBloc = gameObject.AddComponent<Bloc>();
                 newBloc.X = i;
                 newBloc.Y = j;
                 newBloc.image = bloc;
                 blocs.Add(newBloc);
-               
-                //Debug.Log(bloc.rectTransform.rect.width);
             }
         }
         StartCoroutine(Illumine());
