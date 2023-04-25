@@ -32,23 +32,37 @@ public class CreateZone : MonoBehaviour
 
     public void InitZone(string size)
     {
-        
+        float BlocSize = 0;
+        float Padding = 0;
+        float MinSpawnBlocX = 0;
+        float MinSpawnBlocY = 0;
         switch (size)
         {
             case "small":
-                NbrBlocWidth = 4;
-                NbrBlocLength = 6;
-                
+                NbrBlocWidth = 6;
+                NbrBlocLength = 4;
+                BlocSize = 180;
+                Padding = 8;
+                MinSpawnBlocX = 410;
+                MinSpawnBlocY = 180;
                 break;
 
             case "medium":
-                NbrBlocWidth = 5;
-                NbrBlocLength = 8;
+                NbrBlocWidth = 8;
+                NbrBlocLength = 6;
+                BlocSize = 130;
+                Padding = 3;
+                MinSpawnBlocX = 435;
+                MinSpawnBlocY = 150;
                 break;
 
             case "large":
-                NbrBlocWidth = 6;
-                NbrBlocLength = 11;
+                NbrBlocWidth = 12;
+                NbrBlocLength = 8;
+                BlocSize = 105;
+                Padding = 6;
+                MinSpawnBlocX = 303;
+                MinSpawnBlocY = 105;
                 break;
         }
         for (int i = 0; i < NbrBlocLength; i++)
@@ -57,21 +71,44 @@ public class CreateZone : MonoBehaviour
             {
                 float SixeX = canvas.GetComponent<RectTransform>().rect.width / NbrBlocWidth;
                 float SixeY = canvas.GetComponent<RectTransform>().rect.height / NbrBlocLength;
-                Image bloc = Instantiate(oneBloc, new Vector3(SixeX * j + SixeX / 2, SixeY * i + SixeY / 2, 0), Quaternion.identity);
-                bloc.rectTransform.sizeDelta = new Vector2(SixeX, SixeY );
+                Image bloc = Instantiate(oneBloc, new Vector3( /*  SixeX * j + SixeX / 2  */ BlocSize * j + Padding * j + MinSpawnBlocX + BlocSize/2 - Padding, /*  SixeY * i + SixeY / 2  */ BlocSize * i + Padding * i + MinSpawnBlocY + BlocSize / 2 - Padding, 0), Quaternion.identity);
+                bloc.rectTransform.sizeDelta = new Vector2(BlocSize, BlocSize);
                 bloc.transform.SetParent(canvas.transform, true);
-                bloc.transform.SetSiblingIndex(0);
-
+                bloc.transform.SetSiblingIndex(1);
+                bloc.gameObject.SetActive(false);
                 Bloc newBloc = gameObject.AddComponent<Bloc>();
                 newBloc.X = i;
                 newBloc.Y = j;
                 newBloc.image = bloc;
                 blocs.Add(newBloc);
+                
             }
         }
-        StartCoroutine(Illumine());
-       
+        showDangerZone();
 
+        //StartCoroutine(Illumine());
+
+
+    }
+
+    public void showDangerZone()
+    {
+        Move theMove = monster.moves[Random.Range(0, monster.moves.Length)];
+        int imageBase = Random.Range(0, blocs.Count);
+        Bloc lage = blocs[imageBase];
+        foreach (Bloc allBlocs in blocs)
+        {
+            for (int i = 0; i < theMove.X.Count; i++)
+            {
+                if (allBlocs.X == lage.X + theMove.X[i] && allBlocs.Y == lage.Y + theMove.Y[i])
+                {
+                    //allBlocs.image.color = Color.red;
+                    allBlocs.image.gameObject.SetActive(true);
+                }
+            }
+
+
+        }
     }
     IEnumerator Illumine()
     {
@@ -113,9 +150,11 @@ public class CreateZone : MonoBehaviour
     {
         foreach (Bloc allBlocs in blocs.ToList())
         {
-            allBlocs.image.color = Color.white;
+            allBlocs.image.gameObject.SetActive(false);
         }
-        StartCoroutine(Illumine());
+
+        showDangerZone();
+      //  StartCoroutine(Illumine());
     }
     IEnumerator testZone()
     {

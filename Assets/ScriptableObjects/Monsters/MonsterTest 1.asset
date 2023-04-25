@@ -17,8 +17,4 @@ MonoBehaviour:
   pv: 10
   attack: 6
   moves:
-  - {fileID: 11400000, guid: 109f291ebb9eb3c47b04eaab64d2dd49, type: 2}
-  - {fileID: 11400000, guid: 56ff40a2fb402c34d8a2b4efaa9d26ca, type: 2}
   - {fileID: 11400000, guid: 36a595a85c89f4a4ebabe14968b5ac9a, type: 2}
-  - {fileID: 11400000, guid: 8ef705a1451f1b5438dd049311421964, type: 2}
-  - {fileID: 11400000, guid: 84788f1257010a54587d035fd65757a6, type: 2}
