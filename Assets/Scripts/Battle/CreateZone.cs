@@ -13,10 +13,14 @@ public class CreateZone : MonoBehaviour
     //public List<List<int>> AllAttackPosition = new List<List<int>>();
     List<Bloc> blocs = new List<Bloc>();
     public Button NextAction, EndOfFight;
-    public Canvas canvas;
+    public GameObject blocsParent;
     public Image oneBloc;
+    public GameObject Map; 
     int NbrBlocLength;
     int NbrBlocWidth;
+    public List<Sprite> SmallMaps = new List<Sprite>();
+    public List<Sprite> MediumMaps = new List<Sprite>();
+    public List<Sprite> LargeMaps = new List<Sprite>();
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +40,15 @@ public class CreateZone : MonoBehaviour
         float Padding = 0;
         float MinSpawnBlocX = 0;
         float MinSpawnBlocY = 0;
+        
+        transform.GetChild(0).GetComponent<Image>().sprite = Map.GetComponent<Image>().sprite;
+      /*  foreach(Transform child in this.transform)
+        {
+            if(child.name == "Maps")
+            {
+                child.
+            }
+        }*/
         switch (size)
         {
             case "small":
@@ -69,11 +82,9 @@ public class CreateZone : MonoBehaviour
         {
             for(int j = 0; j < NbrBlocWidth; j++)
             {
-                float SixeX = canvas.GetComponent<RectTransform>().rect.width / NbrBlocWidth;
-                float SixeY = canvas.GetComponent<RectTransform>().rect.height / NbrBlocLength;
                 Image bloc = Instantiate(oneBloc, new Vector3( /*  SixeX * j + SixeX / 2  */ BlocSize * j + Padding * j + MinSpawnBlocX + BlocSize/2 - Padding, /*  SixeY * i + SixeY / 2  */ BlocSize * i + Padding * i + MinSpawnBlocY + BlocSize / 2 - Padding, 0), Quaternion.identity);
                 bloc.rectTransform.sizeDelta = new Vector2(BlocSize, BlocSize);
-                bloc.transform.SetParent(canvas.transform, true);
+                bloc.transform.SetParent(blocsParent.transform, true);
                 bloc.transform.SetSiblingIndex(1);
                 bloc.gameObject.SetActive(false);
                 Bloc newBloc = gameObject.AddComponent<Bloc>();
@@ -134,17 +145,21 @@ public class CreateZone : MonoBehaviour
     public void DestroyZone()
     {
         //on supprime tout les blocs actuels
-        foreach(Transform zoneBloc in canvas.transform)
+        foreach(Transform zoneBloc in blocsParent.transform)
         {
-            Destroy(zoneBloc.gameObject);
+            if(zoneBloc.gameObject.tag == "Bloc")
+            {
+                Destroy(zoneBloc.gameObject);
+            }
+            
         }
         //On va vider notre liste afin de pouvoir la remplir à nouveau
-        //le ToList ici nous permet de créer une liste qui aura toutes les réferences des blocs dans notre liste actuelle, ainsi on évite à la liste actuelle de ne pas trouver les références des blmocs qu'on aurait effacé precedemment 
         foreach (Bloc allBlocs in blocs.ToList())
         {
             blocs.Remove(allBlocs);
         }
-        StartCoroutine(testZone());
+        gameObject.SetActive(false);
+        GameManager.Instance.Newturn();
     }
     public void newAction()
     {
@@ -155,10 +170,5 @@ public class CreateZone : MonoBehaviour
 
         showDangerZone();
       //  StartCoroutine(Illumine());
-    }
-    IEnumerator testZone()
-    {
-        yield return new WaitForSeconds(2f);
-        InitZone("small");
     }
 }

@@ -4858,8 +4858,12 @@ MonoBehaviour:
   monster: {fileID: 0}
   NextAction: {fileID: 0}
   EndOfFight: {fileID: 0}
-  canvas: {fileID: 1787947170}
+  blocsParent: {fileID: 0}
   oneBloc: {fileID: 1608795164}
+  Map: {fileID: 0}
+  SmallMaps: []
+  MediumMaps: []
+  LargeMaps: []
 --- !u!1 &963766685
 GameObject:
   m_ObjectHideFlags: 0
@@ -9741,8 +9745,12 @@ MonoBehaviour:
   monster: {fileID: 11400000, guid: 879860815f715474e8bd6aac3ee924ee, type: 2}
   NextAction: {fileID: 24807792}
   EndOfFight: {fileID: 0}
-  canvas: {fileID: 1787947170}
+  blocsParent: {fileID: 1787947167}
   oneBloc: {fileID: 4656516834442649050, guid: 1c380d47da77dfe4e9f96d47b7a5626f, type: 3}
+  Map: {fileID: 7711044389693044614, guid: 9b5643228f2c46e408c104876ebabea8, type: 3}
+  SmallMaps: []
+  MediumMaps: []
+  LargeMaps: []
 --- !u!114 &1787947173
 MonoBehaviour:
   m_ObjectHideFlags: 0

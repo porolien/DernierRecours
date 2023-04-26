@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public int NumberOfTurn = 0;
+    public int MaxTurn = 10;
     public int DifficultyIndex = 0;
     public GameObject primaryCanva;
 
