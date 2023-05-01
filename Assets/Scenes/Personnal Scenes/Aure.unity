@@ -4855,6 +4855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21fff862ec86f6347ba7b4752846678c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllMonster: []
   monster: {fileID: 0}
   NextAction: {fileID: 0}
   EndOfFight: {fileID: 0}
@@ -9742,6 +9743,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21fff862ec86f6347ba7b4752846678c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllMonster:
+  - {fileID: 11400000, guid: 879860815f715474e8bd6aac3ee924ee, type: 2}
+  - {fileID: 11400000, guid: 19d153f6e3ffd1e4d8db2d34e1ae2a3b, type: 2}
   monster: {fileID: 11400000, guid: 879860815f715474e8bd6aac3ee924ee, type: 2}
   NextAction: {fileID: 24807792}
   EndOfFight: {fileID: 0}

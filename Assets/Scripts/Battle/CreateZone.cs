@@ -9,12 +9,14 @@ using UnityEngine.UI;
 public class CreateZone : MonoBehaviour
 {
     List<Image> images = new List<Image>();
+    public List<MonstresBase> AllMonster = new List<MonstresBase>();
     public MonstresBase monster;
     //public List<List<int>> AllAttackPosition = new List<List<int>>();
     List<Bloc> blocs = new List<Bloc>();
     public Button NextAction, EndOfFight;
     public GameObject blocsParent;
     public Image oneBloc;
+    public GameObject MonsterSheet;
     public GameObject Map; 
     int NbrBlocLength;
     int NbrBlocWidth;
@@ -36,6 +38,8 @@ public class CreateZone : MonoBehaviour
 
     public void InitZone(string size)
     {
+        monster = AllMonster[Random.Range(0, AllMonster.Count)];
+        MonsterSheet.GetComponent<Image>().sprite = monster.Sprite;
         float BlocSize = 0;
         float Padding = 0;
         float MinSpawnBlocX = 0;
@@ -170,5 +174,17 @@ public class CreateZone : MonoBehaviour
 
         showDangerZone();
       //  StartCoroutine(Illumine());
+    }
+
+    public void ShowMonsterSheets()
+    {
+        if(MonsterSheet.activeSelf == true)
+        {
+            MonsterSheet.SetActive(false);
+        }
+        else
+        {
+            MonsterSheet.SetActive(true);
+        }
     }
 }

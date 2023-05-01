@@ -58,10 +58,8 @@ public class RoomEvent : MonoBehaviour
             if (PrimaryEvent[PrimaryEventIndex] == PrimaryEvent[3])
             {
                 battleEventCanva.SetActive(true);
-                Debug.Log("Duel");
-                int randomSize = Random.Range(0, 3);
                 string sizeMap = "";
-                switch (randomSize)
+                switch (Random.Range(0, 3))
                 {
                     case 0:
                         sizeMap = "small";
