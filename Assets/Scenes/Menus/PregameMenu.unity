@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 98852352}
   - component: {fileID: 98852351}
   m_Layer: 5
-  m_Name: Text_NumberOfPlayers
+  m_Name: Text_ChooseNumberOfTurns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,7 +181,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "S\xE9lectionner  le Nombre de Joueurs"
+  m_text: 'Choose number
+
+    of turns :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -208,7 +210,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 84
+  m_fontSize: 85.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -365,7 +367,7 @@ GameObject:
   - component: {fileID: 300626681}
   - component: {fileID: 300626680}
   m_Layer: 5
-  m_Name: 1Or2Players
+  m_Name: 5Turns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -438,7 +440,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7326454647099831429}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: EasyDifficulty
+        m_MethodName: FastGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -544,7 +546,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "2 \xE0 4 Joueurs"
+  m_text: 10Turns
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -571,7 +573,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.5
+  m_fontSize: 24.75
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -935,7 +937,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1 \xE0 2 Joueurs"
+  m_text: 5 Turns
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -962,7 +964,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.5
+  m_fontSize: 24.75
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1070,7 +1072,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lancer la Partie
+  m_text: Start the Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1308,7 +1310,7 @@ GameObject:
   - component: {fileID: 1568557907}
   - component: {fileID: 1568557906}
   m_Layer: 5
-  m_Name: 2Or4Players
+  m_Name: 10Turns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1381,7 +1383,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7326454647099831429}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: MediumDifficulty
+        m_MethodName: NormalGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1487,7 +1489,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Retour
+  m_text: Back
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1846,7 +1848,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '> 4 Joueurs'
+  m_text: 15 Turns
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1933,7 +1935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2070215841}
   m_Layer: 5
-  m_Name: NumberPlayerSelection
+  m_Name: NumberTurnsSelection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1976,7 +1978,7 @@ GameObject:
   - component: {fileID: 2095759619}
   - component: {fileID: 2095759618}
   m_Layer: 5
-  m_Name: MoreThan4Players
+  m_Name: 15Turns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2049,7 +2051,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7326454647099831429}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: HardDifficulty
+        m_MethodName: SlowGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2150,6 +2152,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8429483713824269626, guid: 7d2adae771c34a94aa3000a04323f3f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196937324421304576, guid: 7d2adae771c34a94aa3000a04323f3f8, type: 3}
+      propertyPath: MaxTurn
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

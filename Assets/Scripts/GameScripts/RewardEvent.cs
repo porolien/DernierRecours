@@ -29,7 +29,7 @@ public class RewardEvent : MonoBehaviour
         {
             randomInt = Random.Range(1, 2);
 
-            rewardTextSetter = "Piochez : " + randomInt + " carte(s) équipement(s)";
+            rewardTextSetter = "Draw : " + randomInt + " equipement card(s)";
             rewardText.SetText(rewardTextSetter);
         }
 
@@ -37,7 +37,7 @@ public class RewardEvent : MonoBehaviour
         {
             randomInt = Random.Range(1, 2);
 
-            rewardTextSetter = "Piochez : " + randomInt + " carte(s) consommables(s)";
+            rewardTextSetter = "Draw : " + randomInt + " consumable card(s)";
             rewardText.SetText(rewardTextSetter);
         }
     }

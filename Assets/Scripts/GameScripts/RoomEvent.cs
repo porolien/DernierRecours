@@ -23,7 +23,9 @@ public class RoomEvent : MonoBehaviour
 
     public void Event()
     {
-        if(GameManager.Instance.NumberOfTurn < GameManager.Instance.MaxTurn)
+        GameManager.Instance.NumberOfTurn++;
+
+        if (GameManager.Instance.NumberOfTurn <= GameManager.Instance.MaxTurn)
         {
              PrimaryEventIndex = Random.Range(0, PrimaryEvent.Count);
 
@@ -31,7 +33,7 @@ public class RoomEvent : MonoBehaviour
             if (PrimaryEvent[PrimaryEventIndex] == PrimaryEvent[0])
             {
 
-                Debug.Log("Trap");
+                // Debug.Log("Trap");
                 trapEvent.ActivateTrapEvent();
                 PrimaryCanva.gameObject.SetActive(false);
             }
@@ -40,7 +42,7 @@ public class RoomEvent : MonoBehaviour
             if (PrimaryEvent[PrimaryEventIndex] == PrimaryEvent[1])
             {
 
-                Debug.Log("Choice");
+                // Debug.Log("Choice");
                 choiceEvent.ActivateChoiceEvent();
                 PrimaryCanva.gameObject.SetActive(false);
             }
@@ -49,7 +51,7 @@ public class RoomEvent : MonoBehaviour
             if (PrimaryEvent[PrimaryEventIndex] == PrimaryEvent[2])
             {
 
-                Debug.Log("Reward");
+                // Debug.Log("Reward");
                 rewardEvent.ActivateRewardEvent();
                 PrimaryCanva.gameObject.SetActive(false);
             }
@@ -79,14 +81,9 @@ public class RoomEvent : MonoBehaviour
                 createZone.InitZone(sizeMap);
                 PrimaryCanva.gameObject.SetActive(false);
             }
-
-            // WorldEvent Event
-        /*    if (PrimaryEvent[PrimaryEventIndex] == PrimaryEvent[4])
-            {
-                Debug.Log("World Event");
-
-            }*/
         }
+        
+
      
     }
 

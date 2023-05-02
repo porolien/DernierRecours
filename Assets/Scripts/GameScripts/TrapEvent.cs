@@ -30,7 +30,7 @@ public class TrapEvent : MonoBehaviour
         yesButton.gameObject.SetActive(true);
         noButton.gameObject.SetActive(true);
 
-        trapEventText.SetText("Vous êtes tombés dans un piège, avez-vous une grenade afin de le détruire ?");
+        trapEventText.SetText("You fell in a trap ! Do you want to explode it with a Grenade?");
     }
 
     public void DeactivateTrapEvent()
@@ -46,7 +46,7 @@ public class TrapEvent : MonoBehaviour
     public void YesButton()
     {
 
-        trapEventText.SetText("Vous avez choisi de faire exploser le piège grâce à un grenade");
+        trapEventText.SetText("You choose to explode the trap with a Grenade.");
         finalButton.gameObject.SetActive(true);
 
         yesButton.gameObject.SetActive(false);
@@ -56,7 +56,7 @@ public class TrapEvent : MonoBehaviour
     public void NoButton()
     {
 
-        trapEventText.SetText("Vous n'avez pas détruit le piège, chaque joueur perd donc 2 Points de vie");
+        trapEventText.SetText("You didn't destroy the trap, each player takes 2 damages");
         finalButton.gameObject.SetActive(true);
 
         yesButton.gameObject.SetActive(false);

@@ -10,7 +10,7 @@ public class ChoiceEvent : MonoBehaviour
 
     public List<string> Sentences = new List<string>();
     public TextMeshProUGUI Text;
-    string baseText = "Vous avez le choix de ";
+    string baseText = "You can choose to do ";
 
     public List<string> ChoiceConsequences= new List<string>();
     public int ChoiceConsequencesIndex = 0;
@@ -60,7 +60,7 @@ public class ChoiceEvent : MonoBehaviour
             ChoiceEventCanva.gameObject.SetActive(false);
             trapEvent.ActivateTrapEvent();
 
-            Debug.Log("Trap");
+            // Debug.Log("Trap");
         }
 
         if (ChoiceConsequences[ChoiceConsequencesIndex] == ChoiceConsequences[1])
@@ -69,23 +69,16 @@ public class ChoiceEvent : MonoBehaviour
             ChoiceEventCanva.gameObject.SetActive(false);
             rewardEvent.ActivateRewardEvent();
 
-            Debug.Log("Reward");
+            // Debug.Log("Reward");
         }
 
         if (ChoiceConsequences[ChoiceConsequencesIndex] == ChoiceConsequences[2])
-        {
-            // Duel Event
-
-            Debug.Log("Duel");
-        }
-
-        if (ChoiceConsequences[ChoiceConsequencesIndex] == ChoiceConsequences[3])
         {
             // Nothing
             DeactivateChoiceEvent();
             GameManager.Instance.Newturn();
 
-            Debug.Log("Nothing");
+            // Debug.Log("Nothing");
         }
     }
 }

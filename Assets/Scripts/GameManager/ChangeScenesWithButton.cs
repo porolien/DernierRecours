@@ -17,13 +17,13 @@ public class ChangeScenesWithButton : MonoBehaviour
 
     public void LaunchGame()
     {
-        if (GameManager.Instance.DifficultyIndex != 0)
+        if (GameManager.Instance.MaxTurn != 0)
         {
             SceneManager.LoadScene(SceneName);
         }
         else
         {
-            Debug.Log($"Le nombre de joueur n'est pas sélectionné, actuellement {GameManager.Instance.DifficultyIndex}");
+            //Debug.Log($"Le nombre de joueur n'est pas sélectionné, actuellement {GameManager.Instance.MaxTurn}");
         }
     }
 }

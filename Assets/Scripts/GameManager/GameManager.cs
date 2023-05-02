@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     }
 
     public int NumberOfTurn = 0;
-    public int MaxTurn = 10;
+    public int MaxTurn = 0;
     public int DifficultyIndex = 0;
     public GameObject primaryCanva;
 
@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
+/*
     // Set Difficulty of the game
     public void EasyDifficulty()
     {
@@ -41,11 +42,29 @@ public class GameManager : MonoBehaviour
     {
         DifficultyIndex = 3;
     }
+*/
+
+    // Set number of Max Turns
+    public void FastGame()
+    {
+        MaxTurn = 5;
+    }
+    public void NormalGame()
+    {
+        MaxTurn = 10;
+    }
+    public void SlowGame()
+    {
+        MaxTurn = 15;
+    }
+
 
     // Launch a new turn after all the events
     public void Newturn()
     {
         primaryCanva.gameObject.SetActive(true);
     }
-    
+
 }
+
+
